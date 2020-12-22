@@ -63,13 +63,16 @@ f1 = Fruit('orange', 2000)
 f2 = Fruit('melon', 5500)
 
 add = f1 + f2
+print("Example")
 print(add)
+print('-'*50)
 mul = f1 * f2
 print(mul)
-
+print('-'*50)
 print(f1 <= f2)
-
+print('-'*50)
 print(Fruit.calc_discount(f1))
+print('-'*50)
 # 할인율 변경!
 Fruit.change_rate(0.5)
 print(Fruit.calc_discount(f1))

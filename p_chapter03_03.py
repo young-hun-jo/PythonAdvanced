@@ -49,8 +49,11 @@ print('-'*50)
 # 네임드 튜플 메소드
 # 1. _make() : 새로운 객체를 생성 - list to namedtuple
 temp = [52, 39]
+temp2 = (52, 39)
 pt4 = Point1._make(temp)
+pt5 = Point1._make(temp2)
 print(pt4)
+print(pt5)
 # 2. _fields : 필드 네임(namedtuple의 key값들) 확인
 print(pt4._fields)
 # 3. _asdict() : namedtupe -> OrederedDict로 변환

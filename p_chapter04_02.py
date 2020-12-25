@@ -16,14 +16,14 @@
 # Tuple Advanced - unpacking
 # b, a = a, b -> 이것도 일종의 unpacking임!
 # *(aster)를 이용해 unpacking 가능
-print(divmod(100, 21)) # 몫과 나머지 출력
-print(divmod(*(100, 21))) # tuple (100, 21)을 unpack
-print(*(divmod(100, 21))) # divmod결과값을 unpack
+print(divmod(100, 21))  # 몫과 나머지 출력
+print(divmod(*(100, 21)))  # tuple (100, 21)을 unpack
+print(*(divmod(100, 21)))  # divmod결과값을 unpack
 print()
 
 x, y, *rest = range(10)
 print(x, y, rest)
-x, y, *rest= range(2) # 부족해도 빈 리스트로 반환
+x, y, *rest= range(2)  # 부족해도 빈 리스트로 반환
 print(x, y, rest)
 x, y, *rest = 1, 2, 3, 4, 5
 print(x, y, rest)
@@ -51,7 +51,7 @@ print(ex1, id(ex1))
 print(ex2, id(ex2))
 print()
 
-## sorted VS sort : 공통인자로 reverse, key=len/str.lower/함수.. 가
+# sorted VS sort : 공통인자로 reverse, key=len/str.lower/함수.. 가
 # 1. sorted : 정렬 후 새로운 객체를 반환
 v_list = ['bus', 'train', 'airplane', 'underground', 'car']
 h_list = ['버스', '기차', '비행기', '지하철', '자동차']

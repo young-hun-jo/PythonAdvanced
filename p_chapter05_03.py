@@ -3,7 +3,7 @@
 # Closure 사용해보기 - outer function & inner function
 
 def outer_func():
-     series = [] # Free variable(자유 변수)
+     series = [] # Free variable(자유 변수) => list, dict, set같은 경우 mutable하기 때문에 nonlocal 따로 선언하지 않아도 가능!
      def inner_func(value):
          series.append(value)
          print(f"Series:{series}, Length:{len(series)}")
@@ -33,7 +33,7 @@ def outer_func2():
     cnt = 0
     total = 0
     def inner_func2(value):
-        cnt += 1 # inner_func2 외부에 있는 cnt, total 변수를 참조하지 못함!
+        cnt += 1 # inner_func2 외부에 있는 cnt, total 변수를 참조하지 못함! => cnt, total이 immtuable한 자료구조이기 때문에 불가!
         total += value
         return total / cnt
     return inner_func2
@@ -57,3 +57,10 @@ right_closure = outer_func3()
 print("1번째 호출:", right_closure(10))
 print("2번째 호출:", right_closure(20))
 print("3번째 호출:", right_closure(55))
+
+'''
+< global vs nonlocal>
+1. global : 함수 외부나 글로벌 scope에서 선언되는 변수로, 함수 외부나, 내부에서 모두 접근이 가능
+2. nonlocal : local scope가 정의되어 있지 않은 중첩 함수(nested function)에서 사용됨. nonlocal는 local scope도 global scope도 아님
+              단, inner function 즉, nested function 안에서만 사용되야 함! 값의 변경도 nested function안에서 이루어져야 함!
+'''
